@@ -14,15 +14,12 @@ RUN apt -y install curl wget vim git net-tools whois netcat-traditional pciutils
 RUN apt -y install python3-pip golang nodejs npm
 
 # Install Kali Linux "Top 10" metapackage and a few cybersecurity useful tools
-RUN DEBIAN_FRONTEND=noninteractive apt -y install kali-tools-top10 exploitdb man-db dirb nikto wpscan uniscan lsof apktool dex2jar ltrace strace binwalk
+RUN DEBIAN_FRONTEND=noninteractive apt -y install kali-tools-top10 exploitdb man-db dirb nikto wpscan uniscan wordlists ffuf lsof apktool dex2jar ltrace strace binwalk evil-winrm enum4linux
 
-# Install Tor and proxychains, then configure proxychains with Tor
-RUN apt -y install tor proxychains
-COPY config/proxychains.conf /etc/proxychains.conf
+# Install Tor
+RUN apt -y install tor
 
 # Install ZSH shell with custom settings and set it as default shell
 RUN apt -y install zsh
-RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-COPY config/.zshrc .
 
-ENTRYPOINT ["/bin/zsh"]
+COPY config/.zshrc .

@@ -31,6 +31,15 @@ In order to build an _image_ from this dockerfile, just go on the folder where i
 docker build [-t your_image_name] .
 ```
 
+### Starting Container
+
+The purpose of this container is to have Kali Linux with access to a user directory on the host system. This is primarily for CTF and Hack The Box challenges where downloading files for the challenge is necessary.
+To run the container with the configurations required, run the command below:
+
+```sh
+sudo docker run --rm -it -v /home/<user>:/home/<user>:z --hostname kali-linux --network host --user root kali-linux
+```
+
 ##### More info
 
 Check out [Kali Linux on a Docker container: the easiest way](https://tsumarios.github.io/blog/2022/09/17/kali-linux-docker-container/) for more detailed info.
@@ -41,7 +50,7 @@ Check out [Kali Linux on a Docker container: the easiest way](https://tsumarios.
 - LinkedIn: linkedin.com/in/marioraciti
 - Twitter: twitter.com/tsumarios
 
-_If you want to support me, I would be grateful ❤️_
+_Support the original creator! ❤️_
 
 <a href="https://www.buymeacoffee.com/tsumarios" target="_blank"><img
         src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="40"></a>
