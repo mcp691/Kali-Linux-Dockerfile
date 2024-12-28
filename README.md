@@ -15,6 +15,8 @@ These are the main **tools** which are included:
 - uniscan
 - tor
 - proxychains
+- ffuf
+- lsof
 
 Note that you can _add/modify/delete_ configuration files by doing the related changes in the dockerfile.
 
