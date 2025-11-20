@@ -14,7 +14,7 @@ RUN apt -y install curl wget vim git net-tools whois netcat-traditional pciutils
 RUN apt -y install python3-pip golang nodejs npm
 
 # Install Kali Linux "Top 10" metapackage and a few cybersecurity useful tools
-RUN DEBIAN_FRONTEND=noninteractive apt -y install kali-tools-top10 exploitdb man-db apktool dex2jar ltrace strace binwalk evil-winrm
+RUN DEBIAN_FRONTEND=noninteractive apt -y install kali-tools-top10 exploitdb man-db apktool dex2jar ltrace strace binwalk evil-winrm webshells
 
 # Install network protocol tools
 RUN apt -y install impacket-scripts
@@ -26,7 +26,7 @@ RUN apt -y install wordlists seclists
 RUN apt -y install crackmapexec hashcat
 
 # Install web recon tools
-RUN apt -y install nikto wpscan ffuf dirb gobuster wafw00f
+RUN apt -y install nikto wpscan ffuf dirb gobuster wafw00f sublist3r
 
 # Install OS recon tools
 RUN apt -y install enum4linux lsof uniscan smbmap dnsenum onesixtyone

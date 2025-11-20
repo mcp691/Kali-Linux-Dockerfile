@@ -244,6 +244,8 @@ fi
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
+
+# misc. aliases
 alias cl='clear'
 
 # enable auto-suggestions based on the history
